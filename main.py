@@ -32,7 +32,7 @@ def test_get_largest_prime_below():
     # Testaza niste valori pentru functia get_largest_below
     assert get_largest_prime_below(18) == 17
     assert get_largest_prime_below(15) == 13
-    assert get_largest_prime_below(7) == False
+    assert get_largest_prime_below(7) == 5
 
 
 '''
@@ -85,6 +85,12 @@ def get_perfect_squares(start: int, end: int):
 
     return list_of_perfect_numbers
 
+def test_get_perfect_squares() :
+    assert get_perfect_squares(10,20) == [16]
+    assert get_perfect_squares(20,40) == [25,36]
+    assert get_perfect_squares(50,100) == [64,81,100]
+cmd
+
 
 def main():
     while True:
@@ -118,4 +124,5 @@ def main():
 
 
 if __name__ == '__main__':
-   main()
+    main()
+
