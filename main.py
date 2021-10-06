@@ -5,6 +5,7 @@ from datetime import date
 Găsește ultimul număr prim mai mic decât un număr dat.
 '''
 
+
 def is_prime(n):
     # Aceasta functie returneaza daca un numar este prim
     # parametrul n este numarul dat pentru care se returneaza daca este prim
@@ -77,7 +78,7 @@ Afișează toate pătratele perfecte dintr-un interval închis dat.
 
 
 def get_perfect_squares(start: int, end: int):
-    #Returneaza patratele perfecte din intervalul dat prin paramentrii start si end
+    # Returneaza patratele perfecte din intervalul dat prin paramentrii start si end
     list_of_perfect_numbers = []
     for number in range(start, end + 1):
         if sqrt(number) == int(sqrt(number)):
@@ -85,18 +86,20 @@ def get_perfect_squares(start: int, end: int):
 
     return list_of_perfect_numbers
 
-def test_get_perfect_squares() :
-    assert get_perfect_squares(10,20) == [16]
-    assert get_perfect_squares(20,40) == [25,36]
-    assert get_perfect_squares(50,100) == [64,81,100]
+
+def test_get_perfect_squares():
+    assert get_perfect_squares(10, 20) == [16]
+    assert get_perfect_squares(20, 40) == [25, 36]
+    assert get_perfect_squares(50, 100) == [64, 81, 100]
+
 
 
 def main():
     while True:
         print("\nAlegeti o optiune din urmatoarele. ")
-        print("1.Determina ultimul număr prim mai mic decât un număr dat.")
+        print("1.Determina ultimul număr prim mai mic decât un număr dat. ")
         print("2.Calculeaza cmmmc a n numere date. ")
-        print("3.Afiseaza patratele perfecte dintr un interval inchis.")
+        print("3.Afiseaza patratele perfecte dintr un interval inchis. ")
         print("4.Iesire din program\n")
         optiune = int(input("Alegeti o optiune din urmatoarele: "))
         if optiune == 1:
@@ -117,10 +120,8 @@ def main():
             final_list = []
             final_list = get_perfect_squares(capat_stanga_interval, capat_dreapta_interval)
             print(f"Patratele perfecte din intevral sunt: {final_list}")
-        elif optiune == 4 :
+        elif optiune == 4:
             break
-
-
 
 if __name__ == '__main__':
     main()
