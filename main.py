@@ -93,6 +93,27 @@ def test_get_perfect_squares():
     assert get_perfect_squares(50, 100) == [64, 81, 100]
 
 
+'''
+Determină dacă un număr este superprim: dacă toate prefixele sale sunt prime
+'''
+
+
+def is_superprime(n) :
+    #Determina daca un numar este super prim
+    while n:
+        if is_prime(n) :
+            n = n // 10
+        else :
+            return False
+    return True
+
+
+def test_is_superprime() :
+    assert is_superprime(233) == True
+    assert is_superprime(237) == False
+    assert is_superprime(239) == True
+    assert is_superprime(404) == False
+
 
 def main():
     while True:
@@ -100,7 +121,8 @@ def main():
         print("1.Determina ultimul număr prim mai mic decât un număr dat. ")
         print("2.Calculeaza cmmmc a n numere date. ")
         print("3.Afiseaza patratele perfecte dintr un interval inchis. ")
-        print("4.Iesire din program\n")
+        print("4.Determina daca un numar este superprim. ")
+        print("5.Iesire din program\n")
         optiune = int(input("Alegeti o optiune din urmatoarele: "))
         if optiune == 1:
             x = int(input("Dati un numar prim: "))
@@ -121,6 +143,10 @@ def main():
             final_list = get_perfect_squares(capat_stanga_interval, capat_dreapta_interval)
             print(f"Patratele perfecte din intevral sunt: {final_list}")
         elif optiune == 4:
+            numar = int(input("Introduceti numarul: "))
+            rez = is_superprime(numar)
+            print(f"Rezultat: {rez}")
+        elif optiune == 5 :
             break
 
 if __name__ == '__main__':
